@@ -459,6 +459,317 @@ for c in range(len(countries)):
 dest = [des for des in countries if "U" in des]
 print(dest)
 
+# sorting lists
+digits = [100, 40, 20, 90, 80, 50, 30, 60, 70]
+digits.sort()
+print(digits)
+digits.sort(reverse=True)
+print(digits)
+
+# customize sort func
+def myFunc(n):
+    return abs(n - 50)
+
+numb = [40, 30, 50, 10, 20]
+
+numb.sort(key = myFunc)
+
+print(numb)
+
+# copy lists
+passwd = ['admin123', 'developer123', 'administrator']
+copyPasswd = passwd.copy()[0]
+print(copyPasswd)
+_copyPassd = list(passwd)
+print(_copyPassd)
+
+# lists methods
+
+# copy() - to copy lists
+# reverse() - to reverse lists in descending order
+# extend() - to add lists to the end of another lists
+# append() - to append element to a lists at the end
+# clear() - to clear a lists
+# del() - to delete lists and element
+# count() - to count number of times element in lists
+# index() - Returns the index of the first element with the specified value
+# insert() - Adds an element at the specified position
+# sort() - sort lists
+# remove() -Removes the item with the specified value
+# pop() - Removes the item with the specified position
+
+# Tuple
+files = ('ms1.txt', 'ms2.txt', 'ms3.txt')
+print(files)
+# change tuples value
+ch = list(files)
+ch[0] = "f.txt"
+cht = tuple(ch)
+print(cht)
+
+# add tuple to a tuple
+secF = ('auth.txt',)
+files += secF
+print(files)
+
+# unpacking tuples
+dirr =('/tmp', '/etc/passwd', '/etc/nginx')
+(tempdir, etcdir, nginxdir) = dirr
+print(f'{tempdir}\n{etcdir}\n{nginxdir}')
+
+(tmpDir, *rDir) = dirr
+print(f'{tmpDir}\n{rDir}')
+
+# join tuples
+file_dir = files + dirr
+print(file_dir)
+print(dirr * 3)
+
+# tuple methods
+# count() - Returns the number of times a specified value occurs in a tuple
+# index() - Returns the position of a specified value
+
+# set
+myset = {"hello", "world", "python"}
+print(myset)
+thisset = {"orange", "watermelon", "cherry"}
+print(len(thisset))
+
+for x in myset:
+    print(x)
+
+print("orange" in thisset)
+print("banana" not in thisset)
+print(not("banana" not in thisset))
+
+# add sets
+thisset.add("guava")
+print(thisset)
+
+_p = {"Java", "JavaScript"}
+myset.update(_p)
+print(myset)
+
+# remove item
+myset.remove("Java")
+print(myset)
+
+# discard item
+myset.discard('world')
+print(myset)
+
+# pop item
+thisset.pop()
+print(thisset)
+
+# clear items
+thisset.clear()
+print(thisset)
+
+# join sets
+dirOne = {"api", "v1", "v2", "v3"}
+dirTwo = {"portal", "content", "public", "api"}
+dirThree = {"public", "private", "001", "p"}
+
+# union meth
+set1 = dirOne.union(dirThree)
+print(set1)
+
+# update
+digitO = {898, 283, 292, 728}
+digitT = {100.10, 374.19, 476.40}
+digitO.update(digitT)
+print(digitO)
+
+# intersection
+digitTh = {123, 738, 328, 928}
+digitF = {567, 123, 328, 100}
+digitTh.intersection(digitF)
+print(digitTh)
+
+# intersection_update
+objOnee = {"Car", "Bike", "Motorcycle"}
+objTwo = {"Car", "Mouse", "Computer"}
+objOnee.intersection_update(objTwo)
+print(objOnee)
+
+# difference
+objThree = {"Downloading", "test", "test1"}
+objFour = {"test", "Artz", "Content"}
+dkwdwh = objThree.difference(objFour)
+print(dkwdwh)
+
+# difference_update
+aie = {"Haymond", "John", "Moss"}
+dhsh = {"John", "Moses", "Dani"}
+aie.difference_update(dhsh)
+print(aie)
+
+# symmetric_difference
+sdh = {"cherry", "apple", "berry"}
+xsk = {"microsoft", "google", "apple"}
+sja = sdh.symmetric_difference(xsk)
+print(sja)
+
+# symmetric_difference_update
+csn = {"cherry", "apple", "berry"}
+cjw = {"microsoft", "google", "apple"}
+csn.symmetric_difference_update(cjw)
+print(csn)
+
+# isdisjoint
+njda = {"NVDA", "OPENAL", "LINUX"}
+shs = {"GOOGLE", "MICROSOFT", "YAHOO"}
+fjhw = njda.isdisjoint(shs)
+print(fjhw)
+
+# issubset
+dniw = {"a", "1", "b", "2"}
+djhd = {"a", "b", "c", "1", "2", "f"}
+dhj = dniw.issubset(djhd)
+print(dhj)
+
+# issuperset
+bdwj = djhd.issuperset(dniw)
+print(bdwj)
+
+# set methods
+
+# add() - add element to the set
+# clear() - clear elements in set
+# copy() - copy elements in set
+# difference() - returns a set containing the difference between two or more sets
+# difference_update() - removes the items in sets that are not included in another, specified set
+# discard() - remove item
+# intersection() - returns set, that is the intersection of two other sets
+# intersection_update() - removes items that are not present in other, specified set(s)
+# isdisjoint() - return true if items is not present in both sets
+# issubset - return true if all items in set is present in specified set
+# issuperset - returns true if specified set items contain in original set
+# pop() - remove element
+# remove() remove specified element
+# symmetric-difference() returns a set with symmetric difference of two sets
+# symmetric_difference_update() - inserts symmetric difference from this set to another
+# union() - return a set containing the union sets
+# update() - update set with the union of this set and others
+
+# Dictionary
+
+bcdjsh = {"userId": "1", "username": "david", "password": "david123"}
+print(bcdjsh)
+print(bcdjsh["userId"])
+print(len(bcdjsh))
+
+# the dict constructor
+thisdict = dict(name = "Hammond", age = 33, country = "united states of america")
+print(thisdict)
+print(thisdict.get("age"))
+print(thisdict.keys())
+print(bcdjsh.keys())
+
+# view of dict
+xox = thisdict.keys()
+thisdict["height"] = "5'7"
+print(xox)
+print(thisdict.values())
+
+# value view of dict
+hds = thisdict.values()
+thisdict["age"] = 32
+print(hds)
+print(thisdict.items())
+
+# items of view dict
+bdiw = thisdict.items()
+thisdict["occupation"] = "Cybersecurity"
+print(bdiw)
+
+# update dict
+thisdict.update({"occupation": "Software Engineer"})
+print(thisdict)
+thisdict.update({"email": "hammond@fake.com"})
+print(thisdict)
+
+# removing items
+thisdict.pop("height")
+print(thisdict)
+thisdict.popitem()
+print(thisdict)
+del thisdict["occupation"]
+print(thisdict)
+thisdict.clear()
+print(thisdict)
+
+# looping dict
+thiscar = dict(brand = "bmw", model = "sport", year = 2020)
+for x in thiscar.values():
+    print(x)
+for y, x in thiscar.items():
+    print(y, x)
+
+# copy dict
+copiedcar = thiscar.copy()
+print(copiedcar)
+ccar = dict(thiscar)
+print(ccar)
+
+# fromkeys
+brand = ("bmw", "ford", "benz")
+yr = 2020
+cars = dict.fromkeys(brand, yr)
+print(cars)
+
+# dict methods
+
+# clear() - remove all elements
+# copy() - returns a copy of dict
+# fromkeys() - returns a dict with specified keys and value
+# get() -  return item with specified key
+# items() - returns a tuple containing for each key value pair
+# keys() - returns a list containing dict keys
+# pop() - remove item with specified key
+# popitem() - remove the last item with key value pair
+# setdefault() - returns item with specified key, if the does not exist: insert the key, with the specified value
+# update() - update the dict with specified key-value pairs
+# values() - returns a list of values in dict
+
+# if ... else
+ii = 10
+iii = 5
+if iii < ii:
+    pass
+
+# while loop
+i = 1
+while i < 10:
+    print(i)
+    i += 1
+
+# the break statement
+while i < 20:
+    print(i)
+    if (i == 10):
+        break
+    i += 1
+
+# the continue statement
+i = 0
+while i < 6:
+    i += 1
+    if (i == 1):
+        continue
+    print(i)
+
+# the else statement
+while i < 5:
+    print(i)
+    i += 1
+else:
+    print("done")
+
+
+
+
 
 
 

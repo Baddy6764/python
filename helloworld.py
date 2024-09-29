@@ -767,6 +767,332 @@ while i < 5:
 else:
     print("done")
 
+# for loops
+
+for r in range(1, 10, 2):
+    print(r)
+    if (r == 5):
+        break
+else:
+    print("Finished")
+
+# functions
+def my_name(f_name):
+    print(f_name + "hacker")
+
+my_name("001 ")
+my_name("white_")
+my_name("black_")
+my_name("grey_")
+
+# arbitrary arguments *args
+def dns(*names):
+    print("Target " + names[0])
+
+dns("google.com")
+dns("cloudflare.com")
+dns("x.com")
+
+# arbitrary keyword arguments, **kwargs
+def files(**file):
+    print("/home/hacker/Documents/" + file["file1"])
+
+files(file1="auth.txt", file2="sub.txt")
+
+# recursion
+def tri_recursion(k):
+  if(k > 0):
+    result =k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+
+print("\n\nRecursion Example Results")
+tri_recursion(2)
+
+# python lambda
+
+lam = lambda o: o + 20
+print(lam(20))
+
+lam2 = lambda a, b: a % b
+print(lam2(10, 2))
+
+def myF(d):
+    return lambda a: a * d
+
+multi = myF(2)
+print(multi(5))
+
+# classes and objects
+class myClass:
+    x = 10
+print(myClass)
+
+p1 = myClass()
+print(p1.x)
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+pp1 = Person("Hacker", 16)
+print(pp1.name)
+print(pp1.age)
+
+class Data:
+    def __init__(self, email, password):
+        self.email = email
+        self.password = password
+
+uD = Data("hacker@fake.net", "hacker123")
+print(uD.email)
+print(uD.password)
+
+class Objects:
+    def __init__(self, car, phone):
+        self.car = car
+        self.phone = phone
+    def __str__(self):
+        return f"{self.car}\n{self.phone}\n"
+
+obbj = Objects("BMW", "Iphone 16")
+print(obbj)
+
+class Quote:
+    def __init__(self, quote):
+        self.quote = quote
+
+    def show(self):
+         print(f"Never give {self.quote}")
+
+qqq = Quote("up")
+qqq.show()
+
+# Python Inheritance
+
+# create a parent class
+class UserOne:
+    def __init__(self, fname, lname, email, age, country):
+        self.fname = fname
+        self.lname = lname
+        self.email = email
+        self.age = age
+        self.country = country
+
+    def showUser(self):
+        print(self.fname, self.lname, self.email, self.age, self.country)
+
+# create child class
+class userAdd(UserOne):
+    def __init__(self, fname, lname, email, age, country, state):
+        # UserOne.__init__(self, fname, lname, email, age, country)
+        super().__init__(fname, lname, email, age, country)
+        self._state_ = state
+
+    def contact(self):
+        print("Contact me on " + self.email + ", Have a wonderful day.")
+
+ii = 0
+ncnej = ["Apple", "Juice", "Orange"]
+
+while ii < len(ncnej):
+    print(ncnej)
+    ii += 1
+
+userProfile = userAdd("John", "Doe", "johndoe@fake.net", 38, "United Kingdom", "West London")
+userProfile.showUser()
+print(userProfile._state_)
+userProfile.contact()
+
+
+class Data:
+    def __init__(self, email, password):
+        self.email = email
+        self.password = password
+
+    def user(self):
+        print(self.email, self.password)
+
+userData = Data("admin@fake.net", "admin123")
+print(userData.user())
+
+# python Iterator
+
+class MyNum:
+    def __iter__(self):
+        self.a = 1
+        return self
+
+    def __next__(self):
+      if self.a <= 10:
+          x = self.a
+          self.a += 1
+          return x
+      else:
+          raise StopIteration
+myClass = MyNum()
+IterObj = iter(myClass)
+
+print(next(IterObj))
+
+# modules
+import platform
+
+pt = platform.system()
+frhj = dir(platform)
+print(pt)
+print(frhj)
+
+# Python Date
+import datetime
+
+date = datetime.datetime.now()
+print(date.year)
+print(date.fold)
+print(date.microsecond)
+print(date.timestamp())
+print(date.tzinfo)
+
+# Python Math
+minn = min(10, 12, 30, 0)
+maxx = max(1, 10, 22, 9)
+abss = abs(-1.29)
+poww = pow(2, 5)
+print(minn)
+print(maxx)
+print(abss)
+print(poww)
+
+# math built in module
+import math
+
+squaroot = math.sqrt(10)
+ceill = math.ceil(1.5)
+flor = math.floor(1.5)
+pie = math.pi
+print(squaroot)
+print(ceill)
+print(flor)
+print(pie)
+
+# Python JSON
+import json
+
+admin = '{"email": "admin@fake.net", "password": "admin1234", "name": "Philip"}'
+
+user = {"email": "user@fake.net", "password": "user1234", "name": "David"}
+
+par = json.loads(admin)
+userD = json.dumps(user, indent=4, sort_keys=True, separators=(".", "=",))
+print(par["password"], par)
+print(userD)
+
+# Python RegEx
+import re
+
+txt = 'This file contains sensitive data'
+mach = re.search('^This.*data$', txt)
+print(mach)
+
+if mach:
+    print(True)
+else:
+    print(False)
+
+
+# python try except
+
+try:
+    print(abc)
+
+except NameError:
+    print("abc is not defined")
+
+except:
+    print("something went wrong")
+
+#####
+try:
+    print("Hello python!")
+
+except NameError:
+    print("abc is not defined")
+
+except:
+    print("something went wrong")
+
+else:
+    print("no errors")
+
+finally:
+    print("Finished.")
+
+###
+# one = -1
+#
+# if one < 0:
+#     raise Exception("no numbers below zero")
+
+
+## Python File Handling
+
+f = open("demo.txt", "r")
+# print(f.read())
+print(f.readline())
+f.close()
+
+f = open("demo.txt", "a")
+f.write(" Yes!")
+f.close()
+
+f = open("demo.txt", "r")
+print(f.read())
+f.close()
+
+f = open("demo.txt", "w")
+f.write("Overwritten")
+f.close()
+
+f = open("demo.txt", "r")
+print(f.read())
+f.close()
+
+f = open("demo2.txt", "x")
+f.close()
+
+f = open("demo2.txt", "r")
+print(f.read())
+f.close()
+
+# delete file
+from os import remove
+
+remove("demo2.txt")
+
+ages = [12, 18, 22, 20, 15]
+
+def fil(x):
+    if x < 18:
+        return False
+    else:
+        return True
+
+adults = filter(fil, ages)
+
+for x in adults:
+    print(x)
+
+print(help())
+
+
+
+
+
+
+
 
 
 
